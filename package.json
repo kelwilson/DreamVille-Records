@@ -1,0 +1,18 @@
+{
+  "name": "dreamville-studio",
+  "version": "1.0.0",
+  "description": "an api with all the dreamville artist informations\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Ds\u001b[C \u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cinformation\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Ds \u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[informations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kelwilson"
+  },
+  "author": "kelwilson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
