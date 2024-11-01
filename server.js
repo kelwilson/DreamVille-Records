@@ -16,8 +16,9 @@ const dreamVille_artist = {
         'yearsActive': '2007-present',
         'labels': ['Dreamville', 'Roc Nation', 'Interscope', 'Columbia',' ByStorm'],
         'children': 2
-    }, 
-    'bas': {
+         }, 
+
+     'bas' : {
         'age': 37,
         'birthName': 'Abbas Hamad',
         'otherNames': '',
@@ -29,8 +30,9 @@ const dreamVille_artist = {
         'yearsActive': '2010–present',
         'labels': ['Dreamville', 'Interscope'],
         'children': null
-    }, 
-    'cozz': {
+          }, 
+
+     'cozz': {
         'age': 31,
         'birthName': 'Cody Rashad Osagie',
         'otherNames': '',
@@ -67,6 +69,7 @@ app.get('/api/:artistName', (req, res) => {
     
 }) 
 
-app.listen(PORT, () => {
-    console.log(`welcome to DREAMVILLE STUDIO where we listen to port ${PORT}`)
+// setting a new variable for a new port incase heroku decides not to use our created port 8000
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`welcome to DREAMVILLE RECORDS where we listen to port ${PORT}`)
 })
