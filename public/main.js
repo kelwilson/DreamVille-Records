@@ -1,19 +1,34 @@
 const btn = document.querySelector('button')
-const artist = document.querySelector('input').value
 
 btn.addEventListener('click', dream)
 
 async function dream() {
-    console.log('why')
+    const artist = document.querySelector('input').value
     try {
-        const res = await fetch(`https://dreamville-records-kelwilson.onrender.com/api/${artist}`)
+        // const res = await fetch(`https://dreamville-records-kelwilson.onrender.com/api/:${artist}`)
+        const res = await fetch(`http://localhost:8000/api/${artist}`)
 
         if(!res.ok) {
             throw new Error(`HTTP error: ${response.status}`)
         }
 
         const data = await res.json()
+        // const artistArr = []
+        // data.forEach(acts => artistArr.push(acts.birthName));
         console.log(data)
+     
+        console.log(data) 
+        // if(artist)
+        
+        const details = document.createElement('article')
+        details.className = 'details';
+        details.innerHTML = `
+                 <h1> Full Name: ${data.birthName}</h1>
+                 <h2> Other Names: ${data.otherNames || 'has no other names'}</h2>
+                 <span>Age: ${2024 - parseInt(data.birthdate)}</span>
+        
+        `
+        document.querySelector('#display-div').append(details)
     }
     catch(error) {
         console.error(`Error: ${error}`)
