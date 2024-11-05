@@ -1,0 +1,36 @@
+body {
+    background-image: url('../img/wood-test.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#dream-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: aquamarine;
+    gap: 10px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 10px;
+    border-inline: none;
+    width: 20%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.details {
+    background: #fff;
+}
