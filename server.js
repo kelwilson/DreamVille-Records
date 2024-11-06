@@ -10,6 +10,7 @@ app.use(express.static('public'))
 
 const dreamVille_artist = {
     'j cole': {
+        'stageName': 'J Cole',
         'age': 39,
         'birthName': 'Jermaine Lamarr Cole',
         'otherNames': 'Therapist, Hollywood Cole, Kill Edward',
@@ -24,6 +25,7 @@ const dreamVille_artist = {
          }, 
 
      'bas' : {
+        'stageName': 'Bas',
         'age': 37,
         'birthName': 'Abbas Hamad',
         'otherNames': '',
@@ -38,6 +40,7 @@ const dreamVille_artist = {
           }, 
 
      'cozz': {
+        'stageName': 'Cozz',
         'age': 31,
         'birthName': 'Cody Rashad Osagie',
         'otherNames': '',

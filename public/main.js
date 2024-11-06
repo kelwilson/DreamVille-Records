@@ -9,7 +9,7 @@ async function dream() {
         const res = await fetch(`http://localhost:8000/api/${artist}`)
 
         if(!res.ok) {
-            throw new Error(`HTTP error: ${response.status}`)
+            throw new Error(`HTTP error: ${res.status}`)
         }
 
         const data = await res.json()
@@ -24,7 +24,8 @@ async function dream() {
         details.className = 'details';
         details.innerHTML = `
                  <h1> Full Name: ${data.birthName}</h1>
-                 <h2> Other Names: ${data.otherNames || 'has no other names'}</h2>
+                <h2> Stage Name: ${data.stageName}</h2>
+                 <h3> Other Names: ${data.otherNames || 'has no other names'}</h3>
                  <span>Age: ${2024 - parseInt(data.birthdate)}</span>
         
         `
@@ -36,3 +37,4 @@ async function dream() {
 }
 
 console.log('yeah')
+
