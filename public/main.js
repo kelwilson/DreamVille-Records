@@ -5,8 +5,8 @@ btn.addEventListener('click', dream)
 async function dream() {
     const artist = document.querySelector('input').value
     try {
-        // const res = await fetch(`https://dreamville-records-kelwilson.onrender.com/api/:${artist}`)
-        const res = await fetch(`http://localhost:8000/api/${artist}`)
+        const res = await fetch(`https://dreamville-records-kelwilson.onrender.com/api/:${artist}`)
+        // const res = await fetch(`http://localhost:8000/api/${artist}`)
 
         if(!res.ok) {
             throw new Error(`HTTP error: ${res.status}`)
