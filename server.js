@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 })
 
 
-// the colon before the srtistName lets us know what ever comes after the colon is a query parameter
+// the colon before the artistName lets us know what ever comes after the colon is a query parameter
 app.get('/api/:artistName', (req, res) => {
     //getting the query parameter and saving it in a variable 
     const artistes_name = req.params.artistName.toLowerCase()
