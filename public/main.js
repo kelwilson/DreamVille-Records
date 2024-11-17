@@ -3,20 +3,34 @@ const artist_Modal_btn = document.querySelector('#add-artist')
 const artist_form = document.querySelector('.artist-form')
 const caret_up = document.querySelector('.fa-caret-up')
 
-
+// event listener functions start
 btn.addEventListener('click', dream)
 artist_Modal_btn.addEventListener('click', inputOut)
 caret_up.addEventListener('click', inputIn)
+//event listener function ends
 
+// open form modal function
 function inputOut () {
     artist_form.classList.toggle('hidden')
 }
 
+//close form modal function
 function inputIn() {
-    console.log('yeah')
     artist_form.classList.add('hidden')
 }
 
+
+// an event listener for clicking anywhere on the page to close the form modal
+document.body.addEventListener('click', (e) => {
+    console.log(e, `yeah!!!`)
+    // if (e.target.id !== 'add-artist' && artist_form.classList.contains('hidden')) {
+        // console.log('We Outside 💪🏿‼️')}
+        if(e.target.tagName === 'SECTION' || e.target.id === 'dream-container' || e.target.tagName === 'VIDEO') {
+
+            artist_form.classList.add('hidden')
+        }
+    
+})
 
 async function dream() {
     const artist = document.querySelector('input').value

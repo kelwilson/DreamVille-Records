@@ -47,6 +47,7 @@
     padding: 10px;
     border-radius: 10px;
     outline: none;
+    border: none;
     width: 20%;
 }
 
@@ -138,9 +139,16 @@ form div:last-of-type {
 form div a {
     padding: 7px;
     border-radius: 7px;
-    background: #fff;
+    background: #3b3939;
     color: #000;
     text-decoration: none;
+
+}
+
+form div a:hover {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff ;
 
 }
 
