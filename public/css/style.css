@@ -1,19 +1,31 @@
-body {
-    background-image: url('../img/wood-test.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding: 100;
-}
-/* 
-video {
+
+
+#background-video {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index:-100;
-  } */
+    z-index: -1;
+}
+
+/* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- Start */
+
+@media (min-aspect-ratio: 16/9) {
+    #background-video {
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #background-video {
+        width: auto;
+        height: 100%;
+
+    }
+}
+
+/* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- End */
 
 #dream-container {
     display: flex;
