@@ -4,26 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css"type="text/css">
+    <script src="https://kit.fontawesome.com/08f89b8954.js" crossorigin="anonymous"></script>
     <title>DREAMVILLE-RECORD's</title>
 </head>
 <body>
+    <section>
 
-
-    <div id="dream-container">
-
-        <video autoplay loop muted plays-inline id="background-video">
+           <video autoplay loop muted plays-inline class="background-video">
             <source src="video/Dreamville_Sacrifice.mp4" type="video/mp4">
-        </video>
+            </video>
+
+         <div id="dream-container">
 
         <h1>WELCOME TO DREAMVILLE ENTERTAINMENT ‼️ </h1>
 
-        <input type="text">
+        <input type="text" id="search">
         <button>who is your artist</button>
+        <button id="add-artist"> Add Artist</button>
+
 
         <div id="display-div"></div>
         <!-- <script src="./js/index.js"></script> -->
-        <script type="text/javascript" src="/main.js"></script>
-    </div>
-    
+        
+
+         </div>  
+
+    <form action="/addArtist" method="post" class="artist-form hidden">
+        <i class="fa-solid fa-caret-up" style="color: #000;"></i>
+
+        <div>
+        <label for="stage-name">Stage Name:</label>
+        <input type="text" id="stage-name" name="stageName" placeholder="input stage name">
+       </div>
+       
+       <div>
+        <label for="age">Artist Age:</label>
+        <input type="number" id="age" name="age" placeholder="input age">
+        </div>
+        
+        <div>
+        <label for="birth-name">Birth Name:</label>
+        <input type="text" id="birth-name" name="birthName" placeholder="input birth name">
+       </div>
+       
+       <div>
+        <label for="image">Image Url:</label>
+        <input type="url" id="image" name="image" placeholder="input an image url">
+        </div>
+        
+        <div>
+        <label for="other-names">Other Names:</label>
+        <input type="text" id="other-names" name="otherNames[]" placeholder="input other names">
+        </div>
+        
+        <div>
+        <label for="birth-year">Birth Name:</label>
+        <input type="number" id="birth-year" name="birthYear" placeholder="input birth year">
+        </div>
+        
+        <div>
+        <label for="birth-location">Birth Location:</label>
+        <input type="text" id="birth-location" name="birthLocation" placeholder="input birth location">
+        </div>
+        
+        <div>
+        <label for="origin">Place of Origin:</label>
+        <input type="text" id="origin" name="origin" placeholder=" input place of origin">
+        </div>
+        
+        <div>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" placeholder="input genre">
+        </div>
+       
+       <div>
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation[]" placeholder="input occupation">
+       </div>
+       
+       <div>
+        <label for="years-active">Years Active:</label>
+        <input type="text" id="years-active" name="yearsActive" placeholder="input active years">
+        </div>
+        
+        <div>
+        <label for="labels">Record Labels:</label>
+        <input type="text" id="labels" name="labels[]" placeholder="input record labels">
+        </div>
+        
+        <div>
+        <label for="children">Number of Children:</label>
+        <input type="number" id="children" name="children" placeholder="number of children">
+       </div>
+       <div>
+        <a href="#">Input-Artist-Data</a>
+       </div>
+       
+    </form> 
+
+    </section>
+    <script type="text/javascript" src="/main.js"></script>
+
 </body>
 </html>

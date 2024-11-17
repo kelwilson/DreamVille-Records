@@ -1,6 +1,22 @@
 const btn = document.querySelector('button')
+const artist_Modal_btn = document.querySelector('#add-artist')
+const artist_form = document.querySelector('.artist-form')
+const caret_up = document.querySelector('.fa-caret-up')
+
 
 btn.addEventListener('click', dream)
+artist_Modal_btn.addEventListener('click', inputOut)
+caret_up.addEventListener('click', inputIn)
+
+function inputOut () {
+    artist_form.classList.toggle('hidden')
+}
+
+function inputIn() {
+    console.log('yeah')
+    artist_form.classList.add('hidden')
+}
+
 
 async function dream() {
     const artist = document.querySelector('input').value
