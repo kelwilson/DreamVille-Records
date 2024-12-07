@@ -2,34 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"type="text/css">
+    <title>DREAMVILLE-RECORD's</title>
     <script src="https://kit.fontawesome.com/08f89b8954.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DREAMVILLE-RECORD's</title>
 </head>
 <body>
     <section>
 
-           <video autoplay loop muted plays-inline class="background-video">
+        <video autoplay loop muted plays-inline height="2000px" class="background-video">
             <source src="video/Dreamville_Sacrifice.mp4" type="video/mp4">
             </video>
 
          <div id="dream-container">
 
-        <h1>WELCOME TO DREAMVILLE ENTERTAINMENT ‼️ </h1>
+            <h1>WELCOME TO DREAMVILLE ENTERTAINMENT ‼️ </h1>
 
-        <input type="text" id="search">
-        <button>who is your artist</button>
-        <button id="add-artist"> Add Artist</button>
+            <!-- <input type="text" id="search">
+            <button id="search-artist">who is your artist</button> -->
+            <button id="add-artist"> Add Artist</button>
+            <a id="all-artist" href="/allArtist">View all Artist 😊‼️</a>
 
 
         <div id="display-div"></div>
-        <!-- <script src="./js/index.js"></script> -->
+        
         
 
          </div>  
 
-    <form action="/addArtist" method="post" class="artist-form hidden">
+    <form id="artist_form" action="/addArtist" method="POST" class="artist-form hidden">
         <i class="fa-solid fa-caret-up" style="color: #000;"></i>
 
         <div>
@@ -58,8 +69,8 @@
         </div>
         
         <div>
-        <label for="birth-year">Birth Name:</label>
-        <input type="number" id="birth-year" name="birthYear" placeholder="input birth year">
+        <label for="birth-year">Birth Year:</label>
+        <input type="number" min="1980" max="2099" step="1" value="" id="birth-year" name="birthYear" placeholder="input birth year">
         </div>
         
         <div>
@@ -68,7 +79,7 @@
         </div>
         
         <div>
-        <label for="origin">Place of Origin:</label>
+        <label for="origin">Nationality:</label>
         <input type="text" id="origin" name="origin" placeholder=" input place of origin">
         </div>
         
@@ -97,13 +108,13 @@
         <input type="number" id="children" name="children" placeholder="number of children">
        </div>
        <div>
-        <a href="#">Input-Artist-Data</a>
+        <a href="javascript:{}" onclick="document.getElementById('artist_form').submit();">Input-Artist-Data</a>
        </div>
        
     </form> 
-
     </section>
-    <script type="text/javascript" src="/main.js"></script>
+    
+    <script src='js/main.js'></script>
 
 </body>
 </html>
