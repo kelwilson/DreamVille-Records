@@ -1,14 +1,33 @@
 *{
     padding: 0;
     margin: 0;
+    list-style-type: none;
     box-sizing: border-box;
 }
 
+.header {
+    background: linear-gradient(135deg, rgb(27, 32, 27), 60%, rgb(38, 37, 37));
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow:  0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.header nav {
+    text-align: center;
+}
+
 .background-video {
+    /* min-width: 100%; */
+    max-height: 100%; /* fit the video to the screen and prevents overflowing but reduced the width of the video */
+    object-fit: cover; /* fixed width reduction by fitting the video to the full screen */
     position: absolute;
+    background-attachment: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -99;
+    overflow-y: hidden;
 }
 
 /* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- Start */
@@ -43,15 +62,15 @@
 }
 
 
-#search {
+/* #search {
     padding: 10px;
     border-radius: 10px;
     outline: none;
     border: none;
     width: 20%;
-}
+} */
 
-button {
+/* button {
     padding: 10px;
     border: none;
     border-radius: 7.5px;
@@ -62,8 +81,33 @@ button:hover{
     background: transparent;
     color: #fff;
     border: 1px #b6aeae solid;
+} */
+
+#pages-wrap {
+    background: #000;
+    opacity: 80%;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
 }
 
+#pages-wrap span, .link-wrap span {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    padding: 10px;
+}
+
+#all-artist, #favorite {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+#all-artist:hover, #favorite:hover, .link-wrap .link:hover {
+    color: #61ffff;
+    /* color: rgba(14, 186, 230, 0.979); */
+
+}
 
 #add-artist {
     background: rgb(121, 189, 121);
@@ -78,7 +122,7 @@ button:hover{
     border: 1px solid #fff;
 }
 
-.details {
+/* .details {
     background: linear-gradient(135deg, rgb(158, 88, 22) 60%, rgb(134, 122, 114));
     width: 100%;
     height: 70%;
@@ -88,9 +132,12 @@ button:hover{
     -moz-box-shadow: 0 0 3px #ccc;
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 3px #ccc;
-}
+} */
 
 .artist-form {
+    position: absolute;
+    left:477px;
+    top: 190px;
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -99,6 +146,7 @@ button:hover{
     width: 40%;
     padding: 1%;
     border-radius: 20px;
+    z-index: 99;
     margin: 0 auto;
 }
 
@@ -152,6 +200,143 @@ form div a:hover {
 
 }
 
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    padding-top: 20px;
+}
+
+.display h2 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.artist-info {
+    position: relative; /*Add a Backdrop Shadow for More Depth*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* row-gap: 20px; */
+    gap: 15px;
+    margin: 0 50px;
+    perspective: 1000px;  /* set the 3D perspective effects */
+    
+}
+
+
+.artist {
+     display: flex;
+     flex-direction: column;
+     aspect-ratio: 1;
+     font-size: 10px;
+     cursor: pointer;
+     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+     transform-style: preserve-3d; /* Enables 3D transformation for child elements */
+    }
+
+.artist:hover {
+    transform: translateZ(20px); /* Moves the card closer to the viewer */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.4); /* add a subtle glow */
+    }
+
+/* Adding a shadow effect to the 3D */
+/* .artist::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .artist:hover::before {
+    opacity: 1;
+  } */
+
+ /* Adding a shadow effect to the 3D ends */ 
+    
+.artist img {
+    width: 170px;
+    align-self: center;
+    height: 150px;
+    /* object-fit: fill; */
+    /* margin: 1px; */
+    /* border-top-left-radius: 20px; */
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 8px;
+    border-bottom-right-radius: 20px;
+    /* margin: 0 5px 5px; */
+    /* border-radius: 20px;*/
+    margin-bottom: 30px;
+}
+/* 
+.details span,
+.icons {
+    padding: 10px;
+} */
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.fa-trash-can:hover,
+ .fa-heart:hover {
+    font-size: 13px;
+ }
+
 .hidden {
     display: none;
+}
+
+/* artist.ejs start  */
+
+#artist-body {
+    background: #000;
+}
+
+.bac-dream {
+    background-image: url('/image/Dreamville-Records.jpg');
+    background-size: 100% 100%;
+    /* height: 100vh; */
+    /* object-fit: cover;  */
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+/* favorite artist starts*/
+.display-favorite h1 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.link-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link-wrap .link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link-wrap span {
+    padding: 0 5px;
 }

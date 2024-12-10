@@ -100,6 +100,16 @@ app.get('/allArtist', async (req, res) => {
     }
 })
 
+app.get('/favoriteArtist', async (req, res) => {
+    try {
+        const data = await db.collection('artists').find().toArray()
+        res.render('favorite.ejs', {artist_Info: data})
+    }
+    catch(error) {
+        console.error(error)
+    }
+})
+
 
 // // the colon before the artistName lets us know what ever comes after the colon is a query parameter
 // app.get('/api/:artistName', (req, res) => {

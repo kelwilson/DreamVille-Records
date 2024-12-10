@@ -8,7 +8,7 @@ const trash = document.querySelectorAll('.fa-trash-can')
 // event listener functions start
 
 // btn.addEventListener('click', dream)
-artist_Modal_btn.addEventListener('click', inputOut)
+artist_Modal_btn?.addEventListener('click', inputOut)
 caret_up?.addEventListener('click', inputIn) //used '?' optional chaining method to prevent errors while accessing properties or methods on null or undefined
 Array.from(favorite).forEach(btn => btn.addEventListener('click', addLove))
 Array.from(trash).forEach(can => can.addEventListener('click', deleteArtist))
@@ -32,7 +32,7 @@ document.body.addEventListener('click', (e) => {
     // if (e.target.id !== 'add-artist' && artist_form.classList.contains('hidden')) {
         // console.log('We Outside 💪🏿‼️')
 // writing the value of tagName in CAPS because tag only accepts CAPS value
-        if(e.target.tagName === 'SECTION' || e.target.id === 'dream-container' || e.target.tagName === 'VIDEO' || e.target.id === 'search-artist' || e.target.tagName === 'IMG') {
+        if(e.target.tagName === 'SECTION' || e.target.id === 'dream-container' || e.target.tagName === 'VIDEO' || e.target.id === 'search-artist' || e.target.tagName === 'IMG' || e.target.tagName === 'DIV') {
 
             artist_form?.classList.add('hidden')
         }
@@ -109,4 +109,3 @@ async function deleteArtist(event) {
 }
 
 console.log('yeah')
-

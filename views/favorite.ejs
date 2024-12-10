@@ -20,9 +20,14 @@
 <body>
     <header class="header">
         <nav>
-            <ul>
+            <ul class="link-wrap">
                 <li>
-                    <a id="add-artist" href="/"> Add New Artist</a>
+                    <a class="link" href="/"> Add-New-Artist</a>
+
+                </li>
+                <span></span>
+                <li>
+                    <a class="link" href="/allArtist"> View-All-Artist</a>
 
                 </li>
             </ul>
@@ -38,8 +43,8 @@
             <!-- showing most favorite artist i.e if the num of favorite > 10 -->
              <h1>Most <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i> Artist's</h1>
              <ul class="artist-info" id="artist-info">
-            <% for (var i = 0; i < artist_Info.length; i++) { %>
-                <% if (artist_Info[i].favorite > 10) { %>
+                 <% for (var i = 0; i < artist_Info.length; i++) { %>
+                    <% if (artist_Info[i].favorite > 10) { %>
                 <li class="artist" data-id="<%= artist_Info[i]._id %>">
                     <img src="<%- artist_Info[i].image || '/default-image.png' %>" alt="<%= artist_Info[i].stageName || 'No Image' %>">
                     <div class="details">
@@ -54,7 +59,7 @@
                     </div>
                 </li>
                 <% } %>
-                <% } %>
+                <% } %> 
             </ul>
         
          </div>  
