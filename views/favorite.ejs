@@ -43,6 +43,7 @@
             <!-- showing most favorite artist i.e if the num of favorite > 10 -->
              <h1>Most <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i> Artist's</h1>
              <ul class="artist-info" id="artist-info">
+                <% if (artist_Info && artist_Info.length) { %>
                  <% for (var i = 0; i < artist_Info.length; i++) { %>
                     <% if (artist_Info[i].favorite > 10) { %>
                 <li class="artist" data-id="<%= artist_Info[i]._id %>">
@@ -59,7 +60,10 @@
                     </div>
                 </li>
                 <% } %>
-                <% } %> 
+                <% } %>
+                     <% } else { %>
+                        <p>No artist yet 😒,  <a href="/allArtist">click😍</a> To add a artist to favorites.</p>
+                    <% } %>
             </ul>
         
          </div>  

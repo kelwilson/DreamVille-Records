@@ -341,3 +341,19 @@ form div a:hover {
 .link-wrap span {
     padding: 0 5px;
 }
+
+p {
+    color: #fff;
+    font-size: 20px;
+}
+
+p > a {
+    color: #61ffff;
+    text-decoration: none;
+}
+
+p > a:hover {
+    color: orangered;
+    font-size: 22px;
+    text-decoration: solid;
+}
