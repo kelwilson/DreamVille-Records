@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAMVILLE-RECORD's</title>
+    <script src="https://kit.fontawesome.com/08f89b8954.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAMVILLE-RECORD's</title>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a id="add-artist" href="/"> Add New Artist</a>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+
+        <video autoplay loop muted plays-inline height="2000px" class="background-video">
+            <source src="video/Dreamville_Sacrifice.mp4" type="video/mp4">
+            </video>
+
+         <div class="display display-favorite">
+            <!-- showing most favorite artist i.e if the num of favorite > 10 -->
+             <h1>Most <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i> Artist's</h1>
+             <ul class="artist-info" id="artist-info">
+            <% for (var i = 0; i < artist_Info.length; i++) { %>
+                <% if (artist_Info[i].favorite > 10) { %>
+                <li class="artist" data-id="<%= artist_Info[i]._id %>">
+                    <img src="<%- artist_Info[i].image || '/default-image.png' %>" alt="<%= artist_Info[i].stageName || 'No Image' %>">
+                    <div class="details">
+                        <span class="list_stage-name">Stage Name: <%= artist_Info[i].stageName || 'Unknown' %></span>
+                        <span class="list_artist-name">Artist Name: <%= artist_Info[i].birthName || 'Unknown' %></span>
+                        <span>Age: <%= artist_Info[i].age || 'Unknown' %></span>
+                        <div class="icons">
+                               <div class="favorite">
+                                <span>Hearts:<%= artist_Info[i].favorite%></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+                <% } %>
+            </ul>
+        
+         </div>  
+
+    </section>
+    
+    <script src='js/main.js'></script>
+
+</body>
+</html>
