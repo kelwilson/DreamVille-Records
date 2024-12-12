@@ -32,7 +32,7 @@ To get a local copy up and run:
 
 ### LIVE DEMO
 
-Check the live demo here [LINK](https://dreamville-records-kelwilson.onrender.com)
+Check the live demo here [LIVE DEMO](https://dreamville-records-kelwilson.onrender.com)
 
 ## Author
 
@@ -40,7 +40,7 @@ Check the live demo here [LINK](https://dreamville-records-kelwilson.onrender.co
 
 - GitHub: [@githubhandle](https://github.com/kelwilson)
 - Twitter: [@BesongMaris](https://twitter.com/BesongMaris)
-- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/kelly-besong-b33074237/)
+- LinkedIn: [@KellyBesong](https://www.linkedin.com/in/kelly-besong-b33074237/)
 
 ## Show your support
 
