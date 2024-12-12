@@ -38,7 +38,7 @@ Check the live demo here [LIVE DEMO](https://dreamville-records-kelwilson.onrend
 
 👤 **KELWILSON**
 
-- GitHub: [@githubhandle](https://github.com/kelwilson)
+- GitHub: [@Kelwilson](https://github.com/kelwilson)
 - Twitter: [@BesongMaris](https://twitter.com/BesongMaris)
 - LinkedIn: [@KellyBesong](https://www.linkedin.com/in/kelly-besong-b33074237/)
 
