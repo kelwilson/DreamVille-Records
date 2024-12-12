@@ -39,7 +39,7 @@ document.body.addEventListener('click', (e) => {
     
 })
 
-// was trying to open the form immediately the root page loads
+// was trying to open the form as soon as the root page loads
 //     document.body.addEventListener('click', (e) => {
 //     console.log('wagwoun')
 //     // const url = window.location.href;
