@@ -2,6 +2,7 @@
 
 **DREAMVILLE-RECORDS**
 
+[<img src="https://img.youtube.com/vi/<VIDEO ID>/maxresdefault.jpg" width="50%">]
 
 ## Project Description
 
@@ -9,7 +10,7 @@ A full-stack app for dreamville records, where a user can search all their artis
 
 ## Built With
 
-- Ejs/Css , Javascript, MongoDb, Express, NodeJs
+- Ejs/Css , Javascript, MongoDb, Express, Mongoose, Passport, NodeJs
 - Visual Studio Code
 - Chrome Developer Tools
 - following github flows standards.
