@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMVILLE-RECORD's</title>
-    <script src="https://kit.fontawesome.com/08f89b8954.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMVILLE-RECORD's</title>
-</head>
-<body>
-    <header class="header">
+<%- include('partials/header') -%>
+    <div class="header">
         <nav>
             <ul class="link-wrap">
                 <li>
@@ -27,12 +8,12 @@
                 </li>
                 <span></span>
                 <li>
-                    <a class="link" href="/allArtist"> View-All-Artist</a>
+                    <a class="link" href="/artist"> View-All-Artist</a>
 
                 </li>
             </ul>
         </nav>
-    </header>
+    </div>
     <section>
 
         <video autoplay loop muted plays-inline height="2000px" class="background-video">
@@ -43,34 +24,55 @@
             <!-- showing most favorite artist i.e if the num of favorite > 10 -->
              <h1>Most <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i> Artist's</h1>
              <ul class="artist-info" id="artist-info">
-                <% if (artist_Info && artist_Info.length) { %>
-                 <% for (var i = 0; i < artist_Info.length; i++) { %>
-                    <% if (artist_Info[i].favorite > 10) { %>
-                <li class="artist" data-id="<%= artist_Info[i]._id %>">
-                    <img src="<%- artist_Info[i].image || '/default-image.png' %>" alt="<%= artist_Info[i].stageName || 'No Image' %>">
+                <% if (artists && artists.length) { %>
+                 <% for (var i = 0; i < artists.length; i++) { %>
+                    <% if (artists[i].favorite) { %>
+                <li class="artist" data-id="<%= artists[i]._id %>">
+                    <img src="<%- artists[i].image || '/default-image.png' %>" alt="<%= artists[i].stageName || 'No Image' %>">
                     <div class="details">
-                        <span class="list_stage-name">Stage Name: <%= artist_Info[i].stageName || 'Unknown' %></span>
-                        <span class="list_artist-name">Artist Name: <%= artist_Info[i].birthName || 'Unknown' %></span>
-                        <span>Age: <%= artist_Info[i].age || 'Unknown' %></span>
+                        <span class="list_stage-name">Stage Name: <%= artists[i].stageName || 'Unknown' %></span>
+                        <span class="list_artist-name">Artist Name: <%= artists[i].birthName || 'Unknown' %></span>
+                        <span>Age: <%= artists[i].age || 'Unknown' %></span>
                         <div class="icons">
                                <div class="favorite">
-                                <span>Hearts:<%= artist_Info[i].favorite%></span>
+                                <span>Hearts:<%= artists[i].favorite%></span>
                             </div>
+                        </div>    
+
+                         <div class="delete">
+
+                         <span id="delete">DELETE ARTIST</span>
+                        <form
+                        action="/artist/deleteArtist/<%= artists[i]._id %>?_method=DELETE"
+                        method="POST"
+                        class=""
+                      >
+                        <button class="" type="submit">   <i class="fa-solid fa-trash-can" style="color: #ff0404;"></i></button>
+                      </form>
+                     
+                        <!-- <div class="favorite">
+                            <span><%= artists[i].favorite || 0 %></span>
+                            <form
+                            action="/artist/favoriteArtist/<%= artists[i]._id %>?_method=PUT"
+                            method="POST"
+                            class=""
+                          >
+                            <button class="" type="submit"> <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i></button>
+                          </form>
+                            -->
                         </div>
                     </div>
+               
                 </li>
                 <% } %>
                 <% } %>
                      <% } else { %>
-                        <p>No artist yet 😒,  <a href="/allArtist">click😍</a> To add a artist to favorites.</p>
+                        <p>No artist yet 😒,  <a href="/artist">click😍</a> To add a artist to favorites.</p>
                     <% } %>
             </ul>
         
          </div>  
 
     </section>
-    
-    <script src='js/main.js'></script>
 
-</body>
-</html>
+    <%- include('partials/footer') -%>
