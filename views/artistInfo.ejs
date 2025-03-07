@@ -1,0 +1,33 @@
+<%- include('partials/header') -%>
+<!-- <img class="artist-details-bg" src="<%=artist.image%>" alt=""> -->
+<div class="artist-details-bg" style="background-image: url('<%= artist.image%>'); width:100%; height: 100vh; background-repeat: no-repeat; background-size: 100% 100%; image-rendering: pixelated;">
+<!-- Using the image-rendering property to improve the quality of the background image -->
+
+<div class="space">
+
+</div>
+<div class="artist-details">
+    <!-- <h1><%=artist.stageName%></h1> -->
+    <img src="<%=artist.image%>" alt="<%= artist.stageName%>">
+    <ul>
+    <li>Stage Name: <strong><%= artist.stageName%></strong></li>
+    <li>Age: <strong><%= artist.age%></strong></li>
+    <li>Birth Name: <strong><%= artist.birthName%></strong></li>
+    <li>Other Names: <strong><%= artist.otherNames%></strong></li>
+    <li>Birth Year: <strong><%= artist.birthYear%></strong></li>
+    <li>Birth Location: <strong><%= artist.BirthLocation%></strong></li>
+    <li>Origin: <strong><%= artist.origin%></strong></li>
+    <li>Genre: <strong><%= artist.genre%></strong></li>
+    <li>Occupation: <strong><%= artist.occupation%></strong></li>
+    <li>Years Active: <strong><%= artist.yearsActive%></strong></li>
+    <li>Labels: <strong><%= artist.labels%></strong></li>
+    <li>Children: <strong><%= artist.children%></strong></li>
+    </ul>
+
+    <a href="/artist"><i class="fa-regular fa-square-caret-right fa-2xl" style="color: #B197FC;"></i></a>
+    <span id="artist-page">Artist Page</span>
+   
+</div>
+
+</div>
+<%- include('partials/footer') -%>
