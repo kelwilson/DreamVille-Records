@@ -51,6 +51,11 @@
 /* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- End */
 
 #dream-container {
+
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,19 +139,23 @@ button:hover{
     box-shadow: 0 0 3px #ccc;
 } */
 
+.form-div h2 {
+    text-align: center;
+}
+
 .artist-form {
-    position: absolute;
-    left:477px;
-    top: 190px;
+    /* position: absolute; */
+    /* left:477px; */
+    /* top: 190px; */
     display: flex;
     flex-direction: column;
     gap: 7px;
     background: grey;
     opacity: 90%;
-    width: 40%;
-    padding: 1%;
+    width: 600px;
+    padding: 5%;
     border-radius: 20px;
-    z-index: 99;
+    /* z-index: 99; */
     margin: 0 auto;
 }
 
@@ -180,8 +189,12 @@ form div input[type='number'] {
 }
 
 form div:last-of-type {
-    margin: 15px;
-    align-self: center;
+    /* margin: 15px;
+    align-self: center; */
+}
+
+.btn-primary {
+    margin: 20px;
 }
 
 form div a {
@@ -287,11 +300,39 @@ form div a:hover {
     padding: 10px;
 } */
 
+.delete button,
+.favorite button {
+    border: none;
+    background: none;
+}
+
+
+
 .icons {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+    position: relative;
 }
+/* delete form & icon */
+/* Trying to display text whenever i hover over the delete icon */
+
+#delete {
+  position: absolute;
+  left: 12px;
+  display: none;
+}
+
+.fa-trash-can:hover ~ #delete {
+    display: block;
+}
+
+/* Trying to display text whenever i hover over the delete icon */
+.favorite {
+    display: flex;
+    gap: 3px;
+}
+
 
 .fa-trash-can:hover,
  .fa-heart:hover {
@@ -356,4 +397,245 @@ p > a:hover {
     color: orangered;
     font-size: 22px;
     text-decoration: solid;
+}
+
+
+/*********LOGIN***********/
+/* .login-container {
+    display: flex;
+} */
+/* .login {
+    background: grey;
+    margin: 100px;
+} */
+
+/***Boot-strap ***/
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+    z-index: 99;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 65%; 
+    }
+
+    .sidenav{
+        width: 60%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #0dfd00;
+    margin-left: 70px;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+
+input[type='email'] {
+    padding-right: 10px;
+}
+
+.login-video {
+    /* min-width: 100%; */
+    max-height: 100%; /* fit the video to the screen and prevents overflowing but reduced the width of the video */
+    object-fit: cover; /* fixed width reduction by fitting the video to the full screen */
+    position: absolute;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    overflow-y: hidden;
+}
+
+/* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- Start */
+
+@media (min-aspect-ratio: 16/9) {
+    .login-video {
+        width: 100%;
+        /* height: auto; */
+
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .login-video {
+        width: auto;
+        height: 100%;
+
+    }
+}
+
+/* Setting the aspect ratio of the video with media queries so its would be responsixe across different screen sizes- End */
+
+/* Artist Info Section */
+
+.artist-details-bg{
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+.space {
+    height: 5px;
+    margin-bottom: 2%;
+}
+
+.artist-details {
+    display: flex;
+    /* color: #fff; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-radius: 20px;
+    /* box-sizing: 0.2% 5% 3.5% grey; */
+    /* width: 70%; */
+    padding: 3%;
+    margin: 0 23%;
+    background: #fff;
+    /* opacity: ; */
+}
+
+.artist-details img {
+   height: 400px;
+   width: 650px;
+   margin-bottom: 2%;
+}
+
+.article-details a {
+    align-self: flex-end;
+}
+
+
+#artist-page {
+    /* position: absolute; */
+    left: 12px;
+    color: #000;
+    display: none;
+}
+
+/* .article-details a:hover ~ #artist-page {
+  display: flex;
+  color: #000;
+} */
+
+.article-details a:hover #artist-page {
+  display: block;
+  color: #000;
+}
+
+
+
+.fa-square-caret-right:hover #artist-page {
+    display: block; 
+    gap: 2px;
+    color: #000;
+}
+
+
+/* Profile section */
+
+.container-div {
+    margin: 50px 100px;
+    padding: 10px;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    gap: 30px;
+}
+
+.user {
+    background: #e5dede;
+    border: 2px solid #e5e5e5;
+    width: 25%;
+    height: 30%;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.user div {
+    width: 65px;
+    height: 65px;
+    background: #fff;
+    border-radius: 20%;
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.user p {
+    color: #000;
+    
+}
+
+.wrap h2 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.next-buttons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
