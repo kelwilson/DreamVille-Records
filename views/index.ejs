@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMVILLE-RECORD's</title>
-    <script src="https://kit.fontawesome.com/08f89b8954.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMVILLE-RECORD's</title>
-</head>
-<body>
+<%- include('partials/header') -%>
     <section>
 
         <video autoplay loop muted plays-inline height="2000px" class="background-video">
@@ -30,11 +11,13 @@
 
             <!-- <input type="text" id="search">
             <button id="search-artist">who is your artist</button> -->
-            <button id="add-artist"> Add Artist</button>
+            <button id="add-artist" onclick="location.href='/login'"> Add Artist</button>
            <div id="pages-wrap">
-               <a id="all-artist" href="/allArtist">View all Artist 😊‼️</a>
+               <a id="all-artist" href="/artist">View all Artist 😊‼️</a>
+               <!-- <a id="all-artist" href="/allArtist">View all Artist 😊‼️</a> -->
              <span></span>
-               <a id="favorite" href="/favoriteArtist">Favorite Artist's 😍‼️</a>
+               <a id="favorite" href="/login">Favorite Artist's 😍‼️</a>
+               <!-- <a id="favorite" href="/favoriteArtist">Favorite Artist's 😍‼️</a> -->
            </div>
 
         <div id="display-div"></div>
@@ -43,81 +26,7 @@
 
          </div>  
 
-    <form id="artist_form" action="/addArtist" method="POST" class="artist-form hidden">
-        <i class="fa-solid fa-caret-up" style="color: #000;"></i>
 
-        <div>
-        <label for="stage-name">Stage Name:</label>
-        <input type="text" id="stage-name" name="stageName" placeholder="input stage name">
-       </div>
-       
-       <div>
-        <label for="age">Artist Age:</label>
-        <input type="number" id="age" name="age" placeholder="input age">
-        </div>
-        
-        <div>
-        <label for="birth-name">Birth Name:</label>
-        <input type="text" id="birth-name" name="birthName" placeholder="input birth name">
-       </div>
-       
-       <div>
-        <label for="image">Image Url:</label>
-        <input type="url" id="image" name="image" placeholder="input an image url">
-        </div>
-        
-        <div>
-        <label for="other-names">Other Names:</label>
-        <input type="text" id="other-names" name="otherNames[]" placeholder="input other names">
-        </div>
-        
-        <div>
-        <label for="birth-year">Birth Year:</label>
-        <input type="number" min="1980" max="2099" step="1" value="" id="birth-year" name="birthYear" placeholder="input birth year">
-        </div>
-        
-        <div>
-        <label for="birth-location">Birth Location:</label>
-        <input type="text" id="birth-location" name="birthLocation" placeholder="input birth location">
-        </div>
-        
-        <div>
-        <label for="origin">Nationality:</label>
-        <input type="text" id="origin" name="origin" placeholder=" input place of origin">
-        </div>
-        
-        <div>
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" placeholder="input genre">
-        </div>
-       
-       <div>
-        <label for="occupation">Occupation:</label>
-        <input type="text" id="occupation" name="occupation[]" placeholder="input occupation">
-       </div>
-       
-       <div>
-        <label for="years-active">Years Active:</label>
-        <input type="text" id="years-active" name="yearsActive" placeholder="input active years">
-        </div>
-        
-        <div>
-        <label for="labels">Record Labels:</label>
-        <input type="text" id="labels" name="labels[]" placeholder="input record labels">
-        </div>
-        
-        <div>
-        <label for="children">Number of Children:</label>
-        <input type="number" id="children" name="children" placeholder="number of children">
-       </div>
-       <div>
-        <a href="javascript:{}" onclick="document.getElementById('artist_form').submit();">Input-Artist-Data</a>
-       </div>
-       
-    </form> 
     </section>
-    
-    <script src='js/main.js'></script>
 
-</body>
-</html>
+    <%- include('partials/footer') -%>
