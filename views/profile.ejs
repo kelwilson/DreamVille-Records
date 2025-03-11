@@ -1,0 +1,172 @@
+<%- include('partials/header') -%>
+<!-- <div class="container"> -->
+  <!-- <div> -->
+  <!-- <div class="row mt-5" id="wrap"> -->
+    <!-- <div > -->
+         <!-- <div class="wrap"> -->
+          <!-- <div class="user"> -->
+      <!-- <div class="col-6"> -->
+          <!-- <div class="user"> -->
+        <div class="container-div" >
+          <div class="wrap">
+            <div class="user">
+              <div><%=user.userName%>'s image</div>
+              <!-- <img src="" alt="user-img"> -->
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <!-- <div class="mt-5 form-div"> -->
+            <div>
+            <h2>Add an Artist</h2>
+            <!-- <form action="/artist/createArtist" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Caption</label>
+                <textarea class="form-control" id="caption" name="caption"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form> -->
+
+            <form id="artist_form" action="/artist/createArtist" method="POST" class="artist-form">
+      
+              <div>
+              <label for="stage-name">Stage Name:</label>
+              <input type="text" id="stage-name" name="stageName" placeholder="input stage name">
+             </div>
+             
+             <div>
+              <label for="age">Artist Age:</label>
+              <input type="number" id="age" name="age" placeholder="input age">
+              </div>
+              
+              <div>
+              <label for="birth-name">Birth Name:</label>
+              <input type="text" id="birth-name" name="birthName" placeholder="input birth name">
+             </div>
+             
+             <div>
+              <label for="image">Image Url:</label>
+              <input type="url" id="image" name="image" placeholder="input an image url">
+              </div>
+              
+              <div>
+              <label for="other-names">Other Names:</label>
+              <input type="text" id="other-names" name="otherNames[]" placeholder="input other names">
+              </div>
+              
+              <div>
+              <label for="birth-year">Birth Year:</label>
+              <input type="number" min="1980" max="2099" step="1" value="" id="birth-year" name="birthYear" placeholder="input birth year">
+              </div>
+              
+              <div>
+              <label for="birth-location">Birth Location:</label>
+              <input type="text" id="birth-location" name="birthLocation" placeholder="input birth location">
+              </div>
+              
+              <div>
+              <label for="origin">Nationality:</label>
+              <input type="text" id="origin" name="origin" placeholder=" input place of origin">
+              </div>
+              
+              <div>
+              <label for="genre">Genre:</label>
+              <input type="text" id="genre" name="genre" placeholder="input genre">
+              </div>
+             
+             <div>
+              <label for="occupation">Occupation:</label>
+              <input type="text" id="occupation" name="occupation[]" placeholder="input occupation">
+             </div>
+             
+             <div>
+              <!-- <label for="years-active">Years Active:</label>
+              <input type="date" id="years-active" name="yearsActive" placeholder="input active years">
+              </div> -->
+              <label for="startYear && endYear"> Years Active: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="startYear">Start Year:</label>
+              <input type="number" id="startYear" min="1980" max="2099" name="yearsActive[start]" required />
+            
+              <label for="endYear">End Year:</label>
+              <input type="number" id="endYear" min="1980" max="2099" name="yearsActive[end]" required />
+              </label>
+              <div>
+              <label for="labels">Record Labels:</label>
+              <input type="text" id="labels" name="labels[]" placeholder="input record labels">
+              </div>
+              
+              <div>
+              <label for="children">Number of Children:</label>
+              <input type="number" id="children" name="children" placeholder="number of children">
+             </div>
+             <!-- <div>
+              <a href="javascript:{}" onclick="document.getElementById('artist_form').submit();">Input-Artist-Data</a>
+             </div> -->
+             <button type="submit" class="btn btn-primary" value="Upload">Input-Artist-Data</button>
+             
+          </form> 
+          </div>
+
+        </div>
+
+    </div>
+      <!-- </div> -->
+      <div class="col-6">
+        <div>
+        <ul class="row list-unstyled">
+           <!-- <div> -->
+        <% for(var i=0; i<artists.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/getArtist/<%= artists[i]._id%>">
+              <img class="img-fluid" src="<%= artists[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <!-- <div class="row justify-content-center mt-5"> -->
+          <div class="next-buttons">
+          <a class="btn btn-primary" href="/artist">Return to Feed</a>
+          <a class="btn btn-primary" href="/favorite">View Your Favorites</a>
+        </div>  
+      </div>  
+    <!-- </div> -->
+    <!-- <div class="display display-favorite"> -->
+      <!-- showing most favorite artist i.e if the num of favorite > 10 -->
+       <!-- <h1>Most <i class="fa-regular fa-heart love" style="color: #07e3f2;"></i> Artist's</h1>
+       <ul class="artist-info" id="artist-info">
+          <% if (artists && artists.length) { %>
+           <% for (var i = 0; i < artists.length; i++) { %>
+              <% if (artists[i].favorite > 10) { %>
+          <li class="artist" data-id="<%= artists[i]._id %>">
+              <img src="<%- artists[i].image || '/default-image.png' %>" alt="<%= artists[i].stageName || 'No Image' %>">
+              <div class="details">
+                  <span class="list_stage-name">Stage Name: <%= artists[i].stageName || 'Unknown' %></span>
+                  <span class="list_artist-name">Artist Name: <%= artists[i].birthName || 'Unknown' %></span>
+                  <span>Age: <%= artists[i].age || 'Unknown' %></span>
+                  <div class="icons">
+                         <div class="favorite">
+                          <span>Hearts:<%= artists[i].favorite%></span>
+                      </div>
+                  </div>
+              </div>
+          </li>
+          <% } %>
+          <% } %>
+               <% } else { %>
+                  <p>No artist yet 😒,  <a href="/artist">click😍</a> To add a artist to favorites.</p>
+              <% } %>
+      </ul>
+  
+   </div>   -->
+  </div>
+
+</div>
+<%- include('partials/footer') -%>
